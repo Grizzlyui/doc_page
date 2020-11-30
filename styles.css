@@ -1,5 +1,6 @@
 body {
-    background-color: aliceblue;    
+    background-color: aliceblue; 
+    scroll-behavior: smooth;  
 }
 
 code {
@@ -9,16 +10,88 @@ code {
     padding: 5px
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 300px 1fr;  
-    margin: 0px;    
-    font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+@media (max-width:1000px){    
+
+    .container {   
+        display:grid;
+        grid-template-rows: 300px 1fr;
+    }
+
+    .navbar {        
+        height: 400px;
+        width: 100%;
+    }
+
+    #JS-doc {
+        margin-top:0px;
+        font-size: 28px; 
+        text-align: center; 
+        position: fixed;
+        width: 100%;   
+        padding-top: 20px;     
+        padding-bottom: 20px;
+        background-color: aliceblue;
+        border-bottom: 2px solid black;             
+    }
+
+    #nav-list {        
+        margin-top: 80px;          
+        padding-left: 18px;
+        padding-bottom: 10px;
+        list-style-type: none;        
+        text-align: center;
+        border-bottom: 2px solid rgb(106, 107, 114); 
+    }
+
+    #content-container {
+        margin-top: 140px;
+    }
+
+    .content-header {
+        text-align: center;        
+    }
 }
 
 
+@media (min-width:1000px){
+    .container {        
+        display: grid;
+        grid-template-columns: 300px 1fr;
+    }    
+
+    .main-content {
+        border-left: 2px solid rgb(106, 107, 114);
+    }
+
+    #nav-list {
+        margin-top: 75px;
+        height: 700px;
+        width: 250px;           
+        list-style-type: none;
+        position: fixed;        
+    }
+
+    #JS-doc {
+        font-size: 28px; 
+        position: fixed; 
+        padding-left: 40px;      
+    }
+
+    .line-break {
+        visibility: hidden;
+    }
+}
+    
+
+.container {    
+    margin: 0px;      
+    font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+}
+
 .navbar {
-    border-right: 2px solid rgb(134,137,148)     
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid rgb(134,137,148)         
 }
 
 #JS-doc {
@@ -27,14 +100,13 @@ code {
 
 #nav-list {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 700px;
-    width: 250px;
-    margin-top: 0px;    
-    list-style-type: none;
-    position: fixed;
+    flex-direction: column;   
     background-color: aliceblue;    
+}
+
+.link-box {    
+    padding-top: 4px;
+    padding-bottom: 4px;    
 }
 
 .nav-link {
@@ -42,13 +114,18 @@ code {
     color: rgb(106, 107, 114);       
 }
 
+.content-container {
+    overflow-y: scroll;    
+}
+
 .main-content {
-      
+    
 }
 
 .content {
     padding-left: 30px;
-    color: rgb(134,137,148);  
+    color: rgb(134,137,148); 
+    
 }
 
 .content-header {
